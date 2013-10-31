@@ -1,0 +1,140 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>restful_book_app</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <style type="text/css">
+            body {
+                background-color: #eee;
+            }
+
+            #restContainer {
+                width: 750px;
+                margin: 0 auto;
+            }
+
+            .bookContainer {
+                outline: 1px solid #aaa;
+                width: 350px;
+                height: 130px;
+                background-color: #fff;
+                float: left;
+                margin: 5px;
+            }
+
+            .bookContainer img {
+                float: left;
+                margin: 10px;
+            }
+
+            .bookContainer ul {
+                list-style-type: none;
+                margin-bottom: 0;
+            }
+
+            .bookContainer button {
+                float: right;
+                margin: 10px;
+            }
+
+            #addBook label {
+                width: 100px;
+                margin-right: 10px;
+                text-align: right;
+                line-height: 25px;
+            }
+
+            #addBook label, #addBook input {
+                display: block;
+                margin-bottom: 10px;
+                float: left;
+            }
+
+            #addBook label[for="title"], #addBook label[for="releaseDate"] {
+                clear: both;
+            }
+
+            #addBook button {
+                display: block;
+                margin: 5px 20px 10px 10px;
+                float: right;
+                clear: both;
+            }
+
+            #addBook div {
+                width: 580px;
+            }
+
+            #addBook div:after {
+                content: "";
+                display: block;
+                height: 0;
+                visibility: hidden;
+                clear: both;
+                font-size: 0;
+                line-height: 0;
+            }
+        </style>
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+        <!-- build:js scripts/vendor/modernizr.js -->
+        <script src="bower_components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="restContainer">
+            <div id="books">
+                <form id="addBook" action="#">
+                    <div>
+                        <label for="coverImage">Cover Image:</label><input id="coverImage" type="file" />
+                        <label for="title">Title: </label><input id="title" type="text" />
+                        <label for="author">Author: </label><input id="author" type="text" />
+                        <label for="releaseDate">Release Date: </label><input id="releaseDate" type="text" />
+                        <label for="keywords">Keywords: </label><input id="keywords" type="text" />
+                        <button id="add">Add</button>
+                    </div>
+                </form>
+            </div><!-- /#books -->
+
+            <div class="bookContainer">
+                <img src="images/placeholder.png"/>
+                <ul>
+                    <li>Title</li>
+                    <li>Author</li>
+                    <li>Release Date</li>
+                    <li>Keywords</li>
+                </ul>
+
+                <button class="delete">Delete</button>
+            </div>
+
+        </div>
+
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+
+        <!-- build:js scripts/main.js -->
+        <script data-main="scripts/main" src="bower_components/requirejs/require.js"></script>
+        <!-- endbuild -->
+</body>
+</html>
