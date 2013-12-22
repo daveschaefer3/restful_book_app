@@ -6,16 +6,22 @@ define([
     'backbone',
     'templates',
     'collections/library',
-    'views/book'
-], function ($, _, Backbone, JST, Library, BookView) {
+    'views/book',
+    'models/book'
+], function ($, _, Backbone, JST, Library, BookView, BookModel) {
     'use strict';
 
     var LibraryView = Backbone.View.extend({
       el: '#books',
 
+      events: {
+        'click #add':'addBook'
+      },
+
       initialize: function( initialBooks ) {
         this.collection = new Library( initialBooks );
         this.render();
+        this.listenTo( this.collection, 'add', this.renderBook );
       },
 
       // render library by rendering each book in its collection
@@ -32,6 +38,20 @@ define([
           model: item
         });
         this.$el.append( bookView.render().el );
+      },
+
+      addBook: function( e ) {
+        e.preventDefault();
+
+        var formData = {};
+
+        $( '#addBook div' ).children( 'input' ).each( function( i, el ) {
+          if( $( el ).val() != '' ) {
+            formData[ el.id ] = $( el ).val();
+          }
+        });
+
+        this.collection.add( new BookModel( formData ) ); // app.Book is not defined here
       }
       // template: JST['app/scripts/templates/library.ejs']
     });
