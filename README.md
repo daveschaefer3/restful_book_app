@@ -1,4 +1,4 @@
-restful_book_app
+RESTful Book App
 ================
 
 An example RESTful application from Addy Osmani's book "Developing Backbone.js Applications" (http://addyosmani.github.io/backbone-fundamentals/#exercise-2-book-library---your-first-restful-backbone.js-app)
